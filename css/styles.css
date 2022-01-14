@@ -27,8 +27,9 @@ html
   margin-left: 350px;
 }
 #homepage img
-{
-  margin-left: 380px;
+{ 
+  margin-top: 20px;
+  margin-left: 410px;
 }
 .button 
 {
@@ -79,4 +80,15 @@ html
   .button {
     padding: 12px 50px;
   }
+}
+#mouse
+{
+  animation : bounce 0.75s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes bounce 
+{
+  from {transform: translate3d(0,0,0);}
+  to {transform: translate3d(0,25px,0);} 
 }
