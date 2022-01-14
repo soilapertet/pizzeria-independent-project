@@ -1,0 +1,32 @@
+html
+{
+  /* Ensure page covers entire viewpoint */
+  min-height: 100%;
+  background-image: url(../img/pizza.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+/* Need a relative container around your image and then you set your icon to be position: absolute. */
+#homepage
+{
+  position: absolute;
+  top: 200px;
+  left: 200px;
+  color :#f4f4f8;
+}
+#homepage h1, #homepage h3
+{
+  font-size:50px;
+  text-align:center;
+}
+#homepage button
+{
+  margin-top:100px;
+  margin-left: 350px;
+}
+#homepage img
+{
+  margin-left: 380px;
+}
