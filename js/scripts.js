@@ -55,8 +55,14 @@ var getToppingsCost = function() {
   {
     windows.toppingsCost = ultraCost * pizzaToppings.length;
   }
-  else
+  else 
+  {
     return false;
+  }
+}
+// Calculate the cost of the pizza
+var calculatePizzaCost = function(){
+  window.pizzaCost = sizeCost + crustCost + toppingsCost;
 }
 
 // User-interface logic
