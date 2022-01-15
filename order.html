@@ -26,88 +26,121 @@
     </div>
   </nav>
   <div id="order-page">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="card">
-            <div class="card-body">
-              <form id="order-now">
-                <h2>ORDER NOW TO GET A <strong>SLICE</strong> OF THE ACTION!</h2>
-                <div id="order-pizza">
-                  <div class="new-pizza">
-                    <div class="form-group">
-                      <label for="pizza-type">Type of pizza</label>
-                      <br>
-                      <select class="form-select" name="pizza-type" id="pizza-type">
-                        <option value="0">--Select type of pizza--</option>
-                        <option value="Classic Veggie">Classic Veggie</option>
-                        <option value="Meat Lover">Meat Lover</option>
-                        <option value="BBQ Chicken">BBQ Chicken</option>
-                        <option value="Pepperoni">Pepperoni</option>
-                        <option value="Margherita">Margherita</option>
-                        <option value="Hawaiian">Hawaiian</option>
-                      </select>
-                    </div>
-                    <br>
-                    <div class="form-group">
-                      <label for="pizza-size">Size of Pizza</label>
-                      <p style="text-align: center;"><em>
-                        (Small: Ksh. 500, Medium: Ksh.750, Large: Ksh. 1000, Ultra: Ksh.1250)
-                      </em></p>
-                      <!-- value should correspond to the price mentioned -->
-                      <select class="form-select" name="pizza-size" id="pizza-size">
-                        <option value="0">--Select size of pizza--</option>
-                        <option value="500">Small</option>
-                        <option value="750">Medium</option>
-                        <option value="1000">Large</option>
-                        <option value="1250">Ultra</option>
-                      </select>
-                    </div>
-                    <br>
-                    <div class="form-group">
-                      <label for="pizza-crust">Type of crust</label>
-                      <p style="text-align: center;"><em>
-                        (Thin: Ksh. 100, Thick: Ksh.150, Stuffed: Ksh. 200, Gluten-free: Ksh.250)
-                      </em></p>
-                      <!-- value should correspond to the price mentioned -->
-                      <select class="form-select" name="pizza-crust" id="pizza-crust">
-                        <option value="0">--Select type of crust--</option>
-                        <option value="100">Thin crust</option>
-                        <option value="150">Thick crust</option>
-                        <option value="200">Stuffed crust</option>
-                        <option value="250">Gluten-free crust</option>
-                      </select>
-                    </div>
-                    <br>
-                    <div class="form-group" id="toppings">
-                      <label for="toppings">Add Toppings</label>
-                      <p>
-                       <em>(Depends on size: Small: Ksh. 50, Medium: Ksh.100, Large: Ksh. 150, Ultra: Ksh.200)</em> 
-                      </p>
-                      <div class="form-control">
+    <div id="order-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-body">
+                <form id="order-now">
+                  <h2>ORDER NOW TO GET A <strong>SLICE</strong> OF THE ACTION!</h2>
+                  <div id="order-pizza">
+                    <div class="new-pizza">
+                      <div class="form-group">
+                        <label for="pizza-type">Type of pizza</label>
                         <br>
-                          <input type="checkbox" name="toppings" value="Cheese">
-                          <label for="cheese">Cheese</label>
-                          <input type="checkbox" name="toppings" value="Bacon">
-                          <label for="bacon">Bacon</label>
-                          <input type="checkbox" name="toppings" value="Pineapple">
-                          <label for="pineapple">Pineapple</label>
-                          <input type="checkbox" name="toppings" value="Pepperoni">
-                          <label for="pepperoni">Pepperoni</label>
-                          <input type="checkbox" name="toppings" value="Chicken">
-                          <label for="chicken">Chicken</label>
-                          <input type="checkbox" name="toppings" value="Beef">
-                          <label for="beef">Beef</label>
-                          <input type="checkbox" name="toppings" value="Sausage">
-                          <label for="sausage">Sausage</label>
+                        <select class="form-select" name="pizza-type" id="pizza-type">
+                          <option value="0">--Select type of pizza--</option>
+                          <option value="Classic Veggie">Classic Veggie</option>
+                          <option value="Meat Lover">Meat Lover</option>
+                          <option value="BBQ Chicken">BBQ Chicken</option>
+                          <option value="Pepperoni">Pepperoni</option>
+                          <option value="Margherita">Margherita</option>
+                          <option value="Hawaiian">Hawaiian</option>
+                        </select>
+                      </div>
+                      <br>
+                      <div class="form-group">
+                        <label for="pizza-size">Size of Pizza</label>
+                        <p style="text-align: center;"><em>
+                          (Small: Ksh. 500, Medium: Ksh.750, Large: Ksh. 1000, Ultra: Ksh.1250)
+                        </em></p>
+                        <!-- value should correspond to the price mentioned -->
+                        <select class="form-select" name="pizza-size" id="pizza-size">
+                          <option value="0">--Select size of pizza--</option>
+                          <option value="500">Small</option>
+                          <option value="750">Medium</option>
+                          <option value="1000">Large</option>
+                          <option value="1250">Ultra</option>
+                        </select>
+                      </div>
+                      <br>
+                      <div class="form-group">
+                        <label for="pizza-crust">Type of crust</label>
+                        <p style="text-align: center;"><em>
+                          (Thin: Ksh. 100, Thick: Ksh.150, Stuffed: Ksh. 200, Gluten-free: Ksh.250)
+                        </em></p>
+                        <!-- value should correspond to the price mentioned -->
+                        <select class="form-select" name="pizza-crust" id="pizza-crust">
+                          <option value="0">--Select type of crust--</option>
+                          <option value="100">Thin crust</option>
+                          <option value="150">Thick crust</option>
+                          <option value="200">Stuffed crust</option>
+                          <option value="250">Gluten-free crust</option>
+                        </select>
+                      </div>
+                      <br>
+                      <div class="form-group" id="toppings">
+                        <label for="toppings">Add Toppings</label>
+                        <p>
+                         <em>(Depends on size: Small: Ksh. 50, Medium: Ksh.100, Large: Ksh. 150, Ultra: Ksh.200)</em> 
+                        </p>
+                        <div class="form-control">
+                          <br>
+                            <input type="checkbox" name="toppings" value="Cheese">
+                            <label for="cheese">Cheese</label>
+                            <input type="checkbox" name="toppings" value="Bacon">
+                            <label for="bacon">Bacon</label>
+                            <input type="checkbox" name="toppings" value="Pineapple">
+                            <label for="pineapple">Pineapple</label>
+                            <input type="checkbox" name="toppings" value="Pepperoni">
+                            <label for="pepperoni">Pepperoni</label>
+                            <input type="checkbox" name="toppings" value="Chicken">
+                            <label for="chicken">Chicken</label>
+                            <input type="checkbox" name="toppings" value="Beef">
+                            <label for="beef">Beef</label>
+                            <input type="checkbox" name="toppings" value="Sausage">
+                            <label for="sausage">Sausage</label>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <button type="button" class="button2" id="place-order-button">ADD ANOTHER PIZZA</button>
-                <button type="submit" class="button2" id="checkout-button">CHECKOUT</button>
-              </form>
+                  <button type="submit" class="button2" id="checkout-button">CHECKOUT</button>
+                </form>
+              </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="order-summary">
+      <div class="container">
+        <div class="card">
+          <div class="card-body">
+            <h2>Order Summary</h2>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Type</th>
+                  <th scope="col">Size</th>
+                  <th scope="col">Crust</th>
+                  <th scope="col">Toppings</th>
+                  <th scope="col">Total(in Ksh.)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th id="pizzaType"></th> 
+                  <th id="pizzaSize"></th> 
+                  <th id="pizzaCrust"></th> 
+                  <th id="pizzaToppings"></th>
+                  <th id="pizzaTotal"></th> 
+                </tr>
+              </tbody>
+            </table>
+            <button type="button" class="button2" id="pick-button">PICK-UP</button>
+            <button type="button" class="button2" id="delivery-button">DELIVERY</button>
+            <button type="button" class="button2" id="place-order-button">ADD ANOTHER PIZZA</button>
           </div>
         </div>
       </div>

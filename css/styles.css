@@ -216,11 +216,12 @@ html#order
   background-size: cover;
   position:relative;
 }
-#order-page .container
+#order-page
 {
   position: absolute;
   top: 70px;
-  left:100px;
+  left:50px;
+  right: 50px;
 }
 #order-now h2 
 {
@@ -236,6 +237,10 @@ html#order
   padding-bottom: 15px;
   font-size: 25px;
 }
+#order-summary
+{
+  display:none;
+}
 .card
 {
   background-color: #232323;
@@ -243,6 +248,10 @@ html#order
   font-size:20px;
   opacity:0.75;
   margin-bottom:70px;
+}
+.table 
+{
+  color :#F2EAE3;
 }
 .button2 
 {
