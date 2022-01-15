@@ -51,45 +51,54 @@
                     <br>
                     <div class="form-group">
                       <label for="pizza-size">Size of Pizza</label>
-                      <br>
+                      <p style="text-align: center;"><em>
+                        (Small: Ksh. 500, Medium: Ksh.750, Large: Ksh. 1000, Ultra: Ksh.1250)
+                      </em></p>
+                      <!-- value should correspond to the price mentioned -->
                       <select class="form-select" name="pizza-size" id="pizza-size">
                         <option value="0">--Select size of pizza--</option>
-                        <option value="1">Small</option>
-                        <option value="2">Medium</option>
-                        <option value="3">Large</option>
-                        <option value="4">Ultra</option>
+                        <option value="500">Small</option>
+                        <option value="750">Medium</option>
+                        <option value="1000">Large</option>
+                        <option value="1250">Ultra</option>
                       </select>
                     </div>
                     <br>
                     <div class="form-group">
                       <label for="pizza-crust">Type of crust</label>
-                      <br>
+                      <p style="text-align: center;"><em>
+                        (Thin: Ksh. 100, Thick: Ksh.150, Stuffed: Ksh. 200, Gluten-free: Ksh.250)
+                      </em></p>
+                      <!-- value should correspond to the price mentioned -->
                       <select class="form-select" name="pizza-crust" id="pizza-crust">
                         <option value="0">--Select type of crust--</option>
-                        <option value="1">Thin crust</option>
-                        <option value="2">Thick crust</option>
-                        <option value="3">Stuffed crust</option>
-                        <option value="4">Gluten-free crust</option>
+                        <option value="100">Thin crust</option>
+                        <option value="150">Thick crust</option>
+                        <option value="200">Stuffed crust</option>
+                        <option value="250">Gluten-free crust</option>
                       </select>
                     </div>
                     <br>
                     <div class="form-group" id="toppings">
-                      <label for="toppings">Add Toppings:</label>
+                      <label for="toppings">Add Toppings</label>
+                      <p>
+                       <em>(Depends on size: Small: Ksh. 50, Medium: Ksh.100, Large: Ksh. 150, Ultra: Ksh.200)</em> 
+                      </p>
                       <div class="form-control">
                         <br>
-                          <input type="checkbox" id="cheese" value="cheese">
+                          <input type="checkbox" id="cheese">
                           <label for="cheese">Cheese</label>
-                          <input type="checkbox" id="bacon" value="bacon">
+                          <input type="checkbox" id="bacon">
                           <label for="bacon">Bacon</label>
-                          <input type="checkbox" id="pineapple" value="pineapple">
+                          <input type="checkbox" id="pineapple">
                           <label for="pineapple">Pineapple</label>
-                          <input type="checkbox" id="pepperoni" value="pepperoni">
+                          <input type="checkbox" id="pepperoni">
                           <label for="pepperoni">Pepperoni</label>
-                          <input type="checkbox" id="chicken" value="chicken">
+                          <input type="checkbox" id="chicken">
                           <label for="chicken">Chicken</label>
-                          <input type="checkbox" id="beef" value="beef">
+                          <input type="checkbox" id="beef">
                           <label for="beef">Beef</label>
-                          <input type="checkbox" id="sausage" value="sausage">
+                          <input type="checkbox" id="sausage">
                           <label for="sausage">Sausage</label>
                       </div>
                     </div>
