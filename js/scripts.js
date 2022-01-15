@@ -8,6 +8,13 @@ function Pizza(type,size,crust,toppings)
   this.crust = crust;
   this.topppings = toppings;
 }
+// Create a function to store toopings in an array
+function getToppings(){
+  window.pizzaToppings = [];
+  $("input[name='toppings']:checked").each(function(){
+    pizzaToppings.push((this).val());
+  });
+};
 
 // Create a function to collect the price of the pizza based on the size
 // Note uses of change() and children() functions
@@ -155,7 +162,5 @@ $(document).ready(function(){
     var pizzaType = $("#pizza-type :selected").val();
     var pizzaSize = $("#pizza-size :selected").text();
     var pizzaCrust = $("#pizza-crust :selected").text();
-
-    
-  })
+  });
 });
