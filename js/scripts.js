@@ -80,7 +80,7 @@ $(document).ready(function(){
     window.location.href = "index.html"
   });
   // Create a function to allow user to order more than one pizza
-  $("#pizza-button").click(function(){
+  $("#place-order-button").click(function(){
     $("#order-pizza").append(
       '<br>'+
       '<div class="new-pizza">'+
