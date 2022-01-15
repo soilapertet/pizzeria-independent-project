@@ -76,7 +76,7 @@ $(document).ready(function(){
   $("#logo").click(function(){
     window.location.href = "index.html"
   });
-
+  // Create a function to allow user to order more than one pizza
   $("#pizza-button").click(function(){
     $("#order-pizza").append(
       '<br>'+
@@ -148,5 +148,14 @@ $(document).ready(function(){
         '</div>'+
       '</div>'      
     );
+  });
+  $("form#order-now").submit(function(event){
+    event.preventDefault();
+
+    var pizzaType = $("#pizza-type :selected").val();
+    var pizzaSize = $("#pizza-size :selected").text();
+    var pizzaCrust = $("#pizza-crust :selected").text();
+
+    
   })
-})
+});
