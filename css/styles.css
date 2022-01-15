@@ -212,6 +212,7 @@ html#order
   background-image: url(../img/pizza-order.jpg);
   background-repeat: no-repeat;
   background-position: center center;
+  background-attachment: fixed;
   background-size: cover;
   position:relative;
 }
@@ -241,6 +242,7 @@ html#order
   color :#F2EAE3;
   font-size:20px;
   opacity:0.75;
+  margin-bottom:70px;
 }
 .button2 
 {
