@@ -221,6 +221,10 @@ html#order
   top: 70px;
   left:100px;
 }
+#order-now h2 
+{
+  text-align: center;
+}
 #toppings
 {
   text-align: center;
@@ -237,10 +241,6 @@ html#order
   color :#F2EAE3;
   font-size:20px;
   opacity:0.75;
-}
-#order-now h2 
-{
-  text-align: center;
 }
 .button2 
 {
