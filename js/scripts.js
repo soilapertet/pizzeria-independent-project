@@ -3,5 +3,8 @@ $(document).ready(function(){
   $("#order-button").click(function(){
     window.location.href = "order.html";
     return false;
-  })
+  });
+  $("#logo").click(function(){
+    window.location.href = "index.html"
+  });
 })
