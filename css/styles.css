@@ -35,8 +35,8 @@ html
 {
   position: absolute;
   top: 20px;
-  left: 1250px;
-
+  right: 20px;
+  cursor:pointer;
 }
 .button 
 {
