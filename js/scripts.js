@@ -17,6 +17,14 @@ var getSizeCost = function (){
   });
 }
 
+// Create a function to collect the price of the pizza based on the crust
+// Note uses of change() and children() functions
+var getCrustCost = function() {
+  $("select#pizza-crust").change(function(){
+    window.crustCost = parseInt($(this).children("option:selected").val());
+  });
+}
+
 
 // User-interface logic
 
