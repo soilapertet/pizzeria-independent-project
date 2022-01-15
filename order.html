@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" id="order">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/scripts.js"></script>
+  <title>ORDER NOW</title>
+</head>
+<body>
+  <div id="order-page">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <form id="order-now">
+                <h2>ORDER NOW TO GET A <strong>SLICE</strong> OF THE ACTION!</h2>
+                <div class="form-group">
+                  <label for="pizza-type">Type of pizza</label>
+                  <br>
+                  <select class="form-select" name="pizza-type" id="pizza-type">
+                    <option value="0">--Select type of pizza--</option>
+                    <option value="1">Classic Veggie</option>
+                    <option value="2">Meat Lover's</option>
+                    <option value="3">BBQ Chicken</option>
+                    <option value="4">Pepperoni</option>
+                    <option value="5">Margherita</option>
+                    <option value="6">Hawaiian</option>
+                  </select>
+                </div>
+                <br>
+                <div class="form-group">
+                  <label for="pizza-size">Size of Pizza</label>
+                  <br>
+                  <select class="form-select" name="pizza-size" id="pizza-size">
+                    <option value="0">--Select size of pizza--</option>
+                    <option value="1">Small</option>
+                    <option value="2">Medium</option>
+                    <option value="3">Large</option>
+                    <option value="4">Ultra</option>
+                  </select>
+                </div>
+                <br>
+                <div class="form-group">
+                  <label for="pizza-crust">Type of crust</label>
+                  <br>
+                  <select class="form-select" name="pizza-crust" id="pizza-crust">
+                    <option value="0">--Select type of crust--</option>
+                    <option value="1">Thin crust</option>
+                    <option value="2">Thick crust</option>
+                    <option value="3">Stuffed crust</option>
+                    <option value="4">Gluten-free crust</option>
+                  </select>
+                </div>
+                <br>
+                <div class="form-group" id="toppings">
+                  <label for="toppings">Add Toppings:</label>
+                  <div class="form-control">
+                    <br>
+                      <input type="checkbox" id="cheese" value="cheese">
+                      <label for="cheese">Cheese</label>
+                      <input type="checkbox" id="bacon" value="bacon">
+                      <label for="bacon">Bacon</label>
+                      <input type="checkbox" id="pineapple" value="pineapple">
+                      <label for="pineapple">Pineapple</label>
+                      <input type="checkbox" id="pepperoni" value="pepperoni">
+                      <label for="pepperoni">Pepperoni</label>
+                      <input type="checkbox" id="chicken" value="chicken">
+                      <label for="chicken">Chicken</label>
+                      <input type="checkbox" id="beef" value="beef">
+                      <label for="beef">Beef</label>
+                      <input type="checkbox" id="sausage" value="sausage">
+                      <label for="sausage">Sausage</label>
+                  </div>
+                </div>
+                <button type="button" class="button2" id="pizza-button">Add another pizza</button>
+                <button type="submit" class="button2" id="pizza-button">PLACE ORDER</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

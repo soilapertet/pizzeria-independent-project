@@ -39,7 +39,7 @@ html#home
   right: 20px;
   cursor:pointer;
 }
-.button 
+.button1
 {
   appearance: button;
   background-color: #000;
@@ -66,26 +66,26 @@ html#home
   vertical-align: middle;
   white-space: nowrap;
 }
-.button:focus 
+.button1:focus 
 {
   text-decoration: none;
 }
-.button:hover 
+.button1:hover 
 {
   text-decoration: none;
 }
-.button:active 
+.button1:active 
 {
   box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
   outline: 0;
 }
-.button:not([disabled]):active 
+.button1:not([disabled]):active 
 {
   box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
   transform: translate(2px, 2px);
 }
 @media (min-width: 768px) {
-  .button {
+  .button1 {
     padding: 12px 50px;
   }
 }
@@ -205,12 +205,38 @@ nav
   transform: none;
 }
  
- /* order.html */
- html#order
- {
-    background-image: url(../img/pizza-order.jpg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-
- }
+/* order.html */
+html#order
+{
+  min-height:100%;
+  background-image: url(../img/pizza-order.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position:relative;
+}
+#order-page .container
+{
+  position: absolute;
+  top: 150px;
+  left:100px;
+}
+#toppings
+{
+  text-align: center;
+  font-size: 20px;
+}
+#toppings label
+{
+  margin-right: 15px;
+  padding-bottom: 15px;
+  font-size: 20px;
+}
+#order-now h2 
+{
+  text-align: center;
+}
+.button2
+{
+  margin-top: 10px;
+}
