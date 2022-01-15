@@ -13,6 +13,7 @@ function getToppings(){
   window.pizzaToppings = [];
   $("input[name='toppings']:checked").each(function(){
     pizzaToppings.push((this).val());
+    return pizzaToppings;
   });
 };
 
