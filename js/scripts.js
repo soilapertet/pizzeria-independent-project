@@ -41,11 +41,6 @@ var ultraCost = 200;
 // Create pre-processed function which will be called in the $(document).ready function
 // Create a function to collect the price of the pizza based on the toppings selected
 var getToppingsCost = function() {
-  window.pizzaToppings = [];
-  $("input[name='toppings']:checked").each(function(){
-    pizzaToppings.push((this).val());
-  });
-
   if(pizzaSize === "Small")
   {
     windows.toppingsCost = smallCost * pizzaToppings.length;
@@ -162,5 +157,6 @@ $(document).ready(function(){
     var pizzaType = $("#pizza-type :selected").val();
     var pizzaSize = $("#pizza-size :selected").text();
     var pizzaCrust = $("#pizza-crust :selected").text();
+
   });
 });
