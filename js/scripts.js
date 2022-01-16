@@ -1,5 +1,11 @@
 // Business logic
-var sizeCost,crustCost,toppingsCost; //declare variables
+
+//Declare variables
+var sizeCost,crustCost,toppingsCost,currentCost; 
+var smallCost = 50;
+var mediumCost = 100;
+var largeCost = 150;
+var ultraCost = 200;
 
 // Create Pizza constructor
 function Pizza(type,size,crust,toppings)
@@ -18,11 +24,6 @@ function getToppings(){
   });
   return pizzaToppings;
 };
-
-var smallCost = 50;
-var mediumCost = 100;
-var largeCost = 150;
-var ultraCost = 200;
 
 // Create pre-processed function which will be called in the $(document).ready function
 // Create a function to collect the price of the pizza based on the toppings selected
@@ -53,6 +54,7 @@ var getToppingsCost = function() {
   }
   return toppingsCost;
 }
+
 // Calculate the cost of the pizza
 var calculatePizzaCost = function(){
 
@@ -63,6 +65,8 @@ var calculatePizzaCost = function(){
   var pizzaCost = sizeCost + crustCost + toppingsCost;
   return pizzaCost;
 }
+
+// Create a function to check if field entries have been selected
 function checkValidity(){
   if($("#pizza-type").val() === "0"){
     alert("Please select your preferred choice of pizza.");
@@ -79,9 +83,20 @@ function checkValidity(){
   location.reload();
 }
 
+//Create a function to log prices of ordered pizzas 
+function priceLog(){
+
+  var pizzaCost = calculatePizzaCost();
+  var currentCost= pizzaCost;
+
+  $("ul#price-log").append("<li>" + currentCost + "</li>");
+}
+
+
 // User-interface logic
 
 $(document).ready(function(){
+
   // Redirect user to another page after hitting "ORDER NOW!"
   $("#order-button").click(function(){
     window.location.href = "order.html";
@@ -91,11 +106,14 @@ $(document).ready(function(){
     window.location.href = "index.html"
   });
 
+
+// Checkout button
   $("#checkout-button").click(function(){
 
     event.preventDefault();
 
     checkValidity();
+    priceLog();
 
     $("#order-summary").slideToggle();
     
@@ -116,12 +134,14 @@ $(document).ready(function(){
 
     $("tbody#pizzaOrders").append(row);
 
-    // Scroll to the top of id="order-summary"
+  // Scroll to the top of id="order-summary"
+  // Note use of offset() and animate() functions
     var position = $("#order-summary").offset().top;
     $("HTML, BODY").animate({scrollTop:position},1000);
 
   });
 
+// Add pizza button
   $("#add-pizza-button").click(function(){
 
     $("#order-summary").slideToggle();
@@ -132,6 +152,8 @@ $(document).ready(function(){
 
     // Scroll to the top of id="order-section"
     var position = $("#order-section").offset().top;
-    $("HTML,BODY").animate({scrollTop:position},1000)
+    $("HTML,BODY").animate({scrollTop:position},1000);
+
   });
+
 });
