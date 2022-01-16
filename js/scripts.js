@@ -115,6 +115,11 @@ $(document).ready(function(){
               "</th><th id='pizzaTotal'>"+pizzaCost+"</th><tr>";
 
     $("tbody#pizzaOrders").append(row);
+
+    // Scroll to the top of id="order-summary"
+    var position = $("#order-summary").offset().top;
+    $("HTML, BODY").animate({scrollTop:position},1000);
+
   });
 
   $("#add-pizza-button").click(function(){
@@ -124,6 +129,9 @@ $(document).ready(function(){
     // Reset form entry fields
     $("select option").prop("selected",false);
     $("input[name='toppings']").prop("checked",false);  
-    
+
+    // Scroll to the top of id="order-section"
+    var position = $("#order-section").offset().top;
+    $("HTML,BODY").animate({scrollTop:position},1000)
   });
 });
