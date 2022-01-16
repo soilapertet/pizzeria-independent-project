@@ -1,4 +1,5 @@
 // Business logic
+var sizeCost,crustCost,toppingsCost; //declare variables
 
 // Create Pizza constructor
 function Pizza(type,size,crust,toppings)
@@ -6,33 +7,16 @@ function Pizza(type,size,crust,toppings)
   this.type = type;
   this.size = size;
   this.crust = crust;
-  this.topppings = toppings;
+  this.toppings = toppings;
 }
-// Create a function to store toopings in an array
+// Create a function to store toppings in an array
 function getToppings(){
-  window.pizzaToppings = [];
+  var pizzaToppings = [];
   $("input[name='toppings']:checked").each(function(){
-    pizzaToppings.push((this).val());
-    return pizzaToppings;
+    pizzaToppings.push($(this).val());
   });
+  return pizzaToppings;
 };
-
-// Create a function to collect the price of the pizza based on the size
-// Note uses of change() and children() functions
-var getSizeCost = function (){
-  $("select#pizza-size").change(function() {
-    window.sizeCost = parseInt($(this).children("option:selected").val());
-    // var sizeCost = parseInt($("select#pizza-size").val());
-  });
-}
-
-// Create a function to collect the price of the pizza based on the crust
-// Note uses of change() and children() functions
-var getCrustCost = function() {
-  $("select#pizza-crust").change(function(){
-    window.crustCost = parseInt($(this).children("option:selected").val());
-  });
-}
 
 var smallCost = 50;
 var mediumCost = 100;
@@ -42,30 +26,41 @@ var ultraCost = 200;
 // Create pre-processed function which will be called in the $(document).ready function
 // Create a function to collect the price of the pizza based on the toppings selected
 var getToppingsCost = function() {
+
+  var pizzaSize = $("#pizza-size :selected").text();
+  var storeToppings = getToppings();
+
   if(pizzaSize === "Small")
   {
-    windows.toppingsCost = smallCost * pizzaToppings.length;
+    var toppingsCost = smallCost * storeToppings.length;
   }
   else if(pizzaSize === "Medium")
   {
-    windows.toppingsCost = mediumCost * pizzaToppings.length;
+   var toppingsCost = mediumCost * storeToppings.length;
   }
   else if(pizzaSize === "Large")
   {
-    windows.toppingsCost = largeCost * pizzaToppings.length;
+    var toppingsCost = largeCost * storeToppings.length;
   }
   else if(pizzaSize === "Ultra")
   {
-    windows.toppingsCost = ultraCost * pizzaToppings.length;
+    var toppingsCost = ultraCost * storeToppings.length;
   }
   else 
   {
     return false;
   }
+  return toppingsCost;
 }
 // Calculate the cost of the pizza
 var calculatePizzaCost = function(){
-  window.pizzaCost = sizeCost + crustCost + toppingsCost;
+
+  var sizeCost= parseInt($("select#pizza-size").val());
+  var crustCost = parseInt($("select#pizza-crust").val());
+  var toppingsCost = getToppingsCost();
+
+  var pizzaCost = sizeCost + crustCost + toppingsCost;
+  return pizzaCost;
 }
 
 // User-interface logic
@@ -79,7 +74,7 @@ $(document).ready(function(){
   $("#logo").click(function(){
     window.location.href = "index.html"
   });
-  
+
   // Create a function to allow user to order more than one pizza
   // $("#place-order-button").click(function(){
   //   $("#order-pizza").append(
@@ -153,12 +148,23 @@ $(document).ready(function(){
   //     '</div>'      
   //   );
   // });
-  $("form#order-now").submit(function(event){
-    event.preventDefault();
+  $("#checkout-button").click(function(){
 
-    var pizzaType = $("#pizza-type :selected").val();
-    var pizzaSize = $("#pizza-size :selected").text();
-    var pizzaCrust = $("#pizza-crust :selected").text();
+    $("#order-summary").show();
+    
 
+    var pizzaType = $("#pizza-type option:selected").val();
+    var pizzaSize = $("#pizza-size option:selected").text();
+    var pizzaCrust = $("#pizza-crust option:selected").text();
+    var storeToppings = getToppings();
+    var pizzaCost = calculatePizzaCost();
+
+    var pizzaOrder = new Pizza(pizzaType,pizzaSize,pizzaCrust,storeToppings);
+
+    $("#pizzaType").text(pizzaOrder.type);
+    $("#pizzaSize").text(pizzaOrder.size);
+    $("#pizzaCrust").text(pizzaOrder.crust);
+    $("#pizzaToppings").text(pizzaOrder.toppings);
+    $("#pizzaTotal").text(pizzaCost);
   });
 });
