@@ -63,6 +63,21 @@ var calculatePizzaCost = function(){
   var pizzaCost = sizeCost + crustCost + toppingsCost;
   return pizzaCost;
 }
+function checkValidity(){
+  if($("#pizza-type").val() === "0"){
+    alert("Please select your preferred choice of pizza.");
+  }
+  else if($("#pizza-size").val() === "0"){
+    alert("Please select your preferred size of pizza.");
+  }
+  else if($("#pizza-crust").val() === "0"){
+    alert("Please select your preferred pizza crust.");
+  }
+  else {
+    return false;
+  }
+  location.reload();
+}
 
 // User-interface logic
 
@@ -80,8 +95,9 @@ $(document).ready(function(){
 
     event.preventDefault();
 
-    $("#order-section").toggle();
-    $("#order-summary").toggle();
+    checkValidity();
+
+    $("#order-summary").slideToggle();
     
   // Retrieve input from form
     var pizzaType = $("#pizza-type option:selected").val();
@@ -98,17 +114,16 @@ $(document).ready(function(){
               "</th><th id='pizzaCrust'>"+pizzaOrder.crust+"</th><th id='pizzaToppings'>"+pizzaOrder.toppings+
               "</th><th id='pizzaTotal'>"+pizzaCost+"</th><tr>";
 
-     $("tbody#pizzaOrders").append(row);
+    $("tbody#pizzaOrders").append(row);
   });
 
   $("#add-pizza-button").click(function(){
-    
-    $("#order-section").toggle();
-    $("#order-summary").toggle();
+
+    $("#order-summary").slideToggle();
 
     // Reset form entry fields
     $("select option").prop("selected",false);
     $("input[name='toppings']").prop("checked",false);  
-
+    
   });
 });
