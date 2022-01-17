@@ -145,11 +145,13 @@ $(document).ready(function(){
 
     $("tbody#pizzaOrders").append(row);
 
-  // Scroll to the top of id="order-summary"
+  // Scroll to the id="order-summary"
   // Note use of offset() and animate() functions
-    var summaryPosition = $("#order-summary").offset().top;
-    $("HTML, BODY").animate({scrollTop:summaryPosition},1000);
-
+    var summaryPosition = $('#order-summary').offset().top;
+    $("HTML,BODY").animate({scrollTop:summaryPosition},400,function(){
+   
+      window.location.summaryPosition = summaryPosition;
+    });
   });
 
 // Add pizza button
@@ -162,20 +164,33 @@ $(document).ready(function(){
     $("input[name='toppings']").prop("checked",false);  
 
     // Scroll to the top of id="order-section"
-    var orderPosition = $("#order-section").offset().top;
-    $("HTML,BODY").animate({scrollTop:orderPosition},1000);
+    var orderPosition = $('#order-section').offset().top;
+    $("HTML,BODY").animate({scrollTop:orderPosition},100,function(){
+   
+      // Add hash (#) to URL when done scrolling (default click behavior)
+      window.location.orderPosition = orderPosition;
+    });
 
   });
 // Done button
   $("#done-button").click(function(){
 
-    $("#delivery").slideDown()
+    $("#order-summary").slideToggle(800);
+    $("#order-section").slideUp(800);
+    $("#delivery").slideDown();
+
     var deliveryPosition = $("#delivery").offset().top;
-    $("HTML, BODY").animate({scrollTop:deliveryPosition},1000);
+    $("HTML,BODY").animate({scrollTop:deliveryPosition},400,function(){
+   
+      // Add hash (#) to URL when done scrolling (default click behavior)
+      window.location.deliveryPosition = deliveryPosition;
+    });
   });
 
 // Delivery button
   $("#delivery-button").click(function(){
+
+    $("#proceed-button").show();
     var deliveryCost =  100;
 
     for(let i = 0;i < pizzaCosts.length; i++) {
@@ -188,6 +203,16 @@ $(document).ready(function(){
     $("p#delivery-cost").text("Delivery cost: " + "Ksh. " + 100).slideDown(1000);
     $("p#cumultative-cost").text("Total pizza cost: " + "Ksh. " + totalPizzaCost).slideDown(1000);
     $("p#total-cost").text("Final Total: " + "Ksh. " + totalOrderCost).slideDown(1000);
-    $(".col-md-4").append("<button type='button' class='button2'id='proceed-button'>PROCEED</button>")
+  });
+
+// Proceed button
+  $("#proceed-button").click(function(){
+
+    $(".col-md-8").show();
+    // event.preventDefault();
+
+    // var userName = $("input#name").val();
+    // var userNumber = $("input#phone-number").val();
+    // var userAddress = $("input#address").val();
   })
 });
