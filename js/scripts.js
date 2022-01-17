@@ -200,34 +200,71 @@ $(document).ready(function(){
 
     var totalOrderCost = deliveryCost + totalPizzaCost;
 
-    $("p#delivery-cost").text("Delivery cost: " + "Ksh. " + 100).slideDown(1000);
-    $("p#cumultative-cost").text("Total pizza cost: " + "Ksh. " + totalPizzaCost).slideDown(1000);
-    $("p#total-cost").text("Final Total: " + "Ksh. " + totalOrderCost).slideDown(1000);
+    $("p#delivery-cost").text("Delivery cost: " + "Ksh. " + 100);
+    $("p#cumultative-cost").text("Total pizza cost: " + "Ksh. " + totalPizzaCost);
+    $("p#total-cost").text("Final Total: " + "Ksh. " + totalOrderCost);
+
+    //Confirm button
+    $("#confirm-button").click(function(){
+
+      $("#address-info").toggle();
+    
+      event.preventDefault();
+    
+        var userName = $("input#name").val();
+        var userNumber = $("input#phone-number").val();
+        var userAddress = $("input#address").val();
+        var totalOrderCost = deliveryCost + totalPizzaCost;
+    
+        $("#delivery-message").text(
+          "THANK YOU " + userName + " FOR ORDERING WITH US! This is to confirm that we've received your order and that your delivery address is "+
+           userAddress + "." + " In case of any issue, we'll reach out to you through the provided number: "+ userNumber + ". " +
+           "Please pay Ksh. " + totalOrderCost + " upon delivery."
+        );
+    });
   });
 
-// Proceed button
+  // Proceed button
   $("#proceed-button").click(function(){
 
     $("#address-info").toggle();
 
   });
 
-// Confirm button
-$("#confirm-button").click(function(){
+  // Pick-up button
+  $("#pick-up-button").click(function(){
 
-  $("#address-info").toggle();
+    $("#proceed-button").show();
 
-  event.preventDefault();
+    for(let i = 0;i < pizzaCosts.length; i++) {
+      totalPizzaCost +=  pizzaCosts[i];
+      console.log(totalPizzaCost);
+    }
 
-    var userName = $("input#name").val();
-    var userNumber = $("input#phone-number").val();
-    var userAddress = $("input#address").val();
-    var totalOrderCost = deliveryCost + totalPizzaCost;
+    var totalOrderCost =  totalPizzaCost;
 
-    $("#delivery-message").text(
-      "THANK YOU " + userName + " FOR ORDERING WITH US! This is to confirm that we've received your order and that your delivery address is "+
-       userAddress + "." + " In case of any issue, we'll reach out to you through the provided number: "+ userNumber + ". " +
-       "Please pay Ksh. " + totalOrderCost + " upon delivery."
-    );
+    $("p#delivery-cost").hide();
+    $("p#cumultative-cost").hide()
+    $("p#total-cost").text("Final Total: " + "Ksh. " + totalOrderCost);
+
+    // Confirm button
+    $("#confirm-button").click(function(){
+
+      $("#address-info").toggle();
+    
+      event.preventDefault();
+    
+        var userName = $("input#name").val();
+        var userNumber = $("input#phone-number").val();
+        var userAddress = $("input#address").val();
+        var totalOrderCost = totalPizzaCost;
+    
+        $("#delivery-message").text(
+          "THANK YOU " + userName + " FOR ORDERING WITH US! This is to confirm that we've received your order and that your order is processed"+
+          "." + "Your order will be ready in the next 35-45 minutes. Your patience is highly appreciated. Once your order is ready, we'll send our address to the provided number: "+ userNumber + ". " +
+           "Please pay Ksh. " + totalOrderCost + " at the cashier upon arrving at the premises."
+        );
+    });
+
   });
 });
