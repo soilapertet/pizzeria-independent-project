@@ -2,6 +2,7 @@
 
 //Declare variables
 var sizeCost,crustCost,toppingsCost,currentCost; 
+var pizzaCosts = [];
 var smallCost = 50;
 var mediumCost = 100;
 var largeCost = 150;
@@ -64,6 +65,7 @@ var calculatePizzaCost = function(){
 
   var pizzaCost = sizeCost + crustCost + toppingsCost;
   return pizzaCost;
+
 }
 
 // Create a function to check if field entries have been selected
@@ -83,15 +85,24 @@ function checkValidity(){
   location.reload();
 }
 
-//Create a function to log prices of ordered pizzas 
-function priceLog(){
+//Create a function to create an array of the pizza prices for each order
+function returnPizzaCosts(){
 
-  var pizzaCost = calculatePizzaCost();
-  var currentCost= pizzaCost;
-
-  $("ul#price-log").append("<li>" + currentCost + "</li>");
+  const checkout = document.querySelector('#checkout-button');
+  if(checkout){
+    checkout.addEventListener('click', (e) => {
+        e.preventDefault()
+    
+        var pizzaCost = calculatePizzaCost();
+        var currentCost = pizzaCost;
+        pizzaCosts.push(currentCost);
+        console.log(pizzaCosts);
+        return pizzaCosts;
+      },false);
+  }
 }
 
+returnPizzaCosts();
 
 // User-interface logic
 
@@ -99,11 +110,11 @@ $(document).ready(function(){
 
   // Redirect user to another page after hitting "ORDER NOW!"
   $("#order-button").click(function(){
-    window.location.href = "order.html";
+    $(location).prop('href', 'order.html')
     return false;
   });
   $("#logo").click(function(){
-    window.location.href = "index.html"
+    $(location).prop('href', 'index.html')
   });
 
 
@@ -113,8 +124,7 @@ $(document).ready(function(){
     event.preventDefault();
 
     checkValidity();
-    priceLog();
-
+    
     $("#order-summary").slideToggle();
     
   // Retrieve input from form
@@ -136,8 +146,8 @@ $(document).ready(function(){
 
   // Scroll to the top of id="order-summary"
   // Note use of offset() and animate() functions
-    var position = $("#order-summary").offset().top;
-    $("HTML, BODY").animate({scrollTop:position},1000);
+    var summaryPosition = $("#order-summary").offset().top;
+    $("HTML, BODY").animate({scrollTop:summaryPosition},1000);
 
   });
 
@@ -151,9 +161,21 @@ $(document).ready(function(){
     $("input[name='toppings']").prop("checked",false);  
 
     // Scroll to the top of id="order-section"
-    var position = $("#order-section").offset().top;
-    $("HTML,BODY").animate({scrollTop:position},1000);
+    var orderPosition = $("#order-section").offset().top;
+    $("HTML,BODY").animate({scrollTop:orderPosition},1000);
 
   });
+// // Done button
+//   $("#done-button").click(function(){
 
+//     $("#delivery").slideDown()
+//     var deliveryPosition = $("#delivery").offset().top;
+//     $("HTML, BODY").animate({scrollTop:deliveryPosition},1000);
+//   });
+
+// // Delivery button
+//   $("#delivery-button").click(function(){
+//     var deliveryCostMessage = "Delivery Cost: Ksh. 100";
+//     $("p#delivery-cost").text(deliveryCostMessage);
+//   })
 });
