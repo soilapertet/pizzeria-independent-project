@@ -1,8 +1,9 @@
 // Business logic
 
 //Declare variables
-var sizeCost,crustCost,toppingsCost,currentCost; 
+var sizeCost,crustCost,toppingsCost,currentCost,totalOrderCost,deliveryCost; 
 var pizzaCosts = [];
+var totalPizzaCost = 0;
 var smallCost = 50;
 var mediumCost = 100;
 var largeCost = 150;
@@ -165,17 +166,28 @@ $(document).ready(function(){
     $("HTML,BODY").animate({scrollTop:orderPosition},1000);
 
   });
-// // Done button
-//   $("#done-button").click(function(){
+// Done button
+  $("#done-button").click(function(){
 
-//     $("#delivery").slideDown()
-//     var deliveryPosition = $("#delivery").offset().top;
-//     $("HTML, BODY").animate({scrollTop:deliveryPosition},1000);
-//   });
+    $("#delivery").slideDown()
+    var deliveryPosition = $("#delivery").offset().top;
+    $("HTML, BODY").animate({scrollTop:deliveryPosition},1000);
+  });
 
-// // Delivery button
-//   $("#delivery-button").click(function(){
-//     var deliveryCostMessage = "Delivery Cost: Ksh. 100";
-//     $("p#delivery-cost").text(deliveryCostMessage);
-//   })
+// Delivery button
+  $("#delivery-button").click(function(){
+    var deliveryCost =  100;
+
+    for(let i = 0;i < pizzaCosts.length; i++) {
+      totalPizzaCost +=  pizzaCosts[i];
+      console.log(totalPizzaCost);
+    }
+
+    var totalOrderCost = deliveryCost + totalPizzaCost;
+
+    $("p#delivery-cost").text("Delivery cost: " + "Ksh. " + 100).slideDown(1000);
+    $("p#cumultative-cost").text("Total pizza cost: " + "Ksh. " + totalPizzaCost).slideDown(1000);
+    $("p#total-cost").text("Final Total: " + "Ksh. " + totalOrderCost).slideDown(1000);
+    $(".col-md-4").append("<button type='button' class='button2'id='proceed-button'>PROCEED</button>")
+  })
 });
