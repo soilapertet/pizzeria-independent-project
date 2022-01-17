@@ -157,23 +157,28 @@
                 <button type="button" class="button2" id="proceed-button">PROCEED</button>
               </div>
               <div class="col-md-8">
-                <h1>DELIVERY ADDRESS</h1>
-                <p><em>Please enter your delivery address below.</em></p>
-                <form action="delivery-address" id="delivery-adresss">
-                  <div class="form-group">
-                    <label for="name">Full name:</label>
-                    <input type="text" class="form-control" placeholder="Enter your full name here..." id="name" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="phone-number">Phone number:</label>
-                    <input type="text" class="form-control" placeholder="Enter your phone number here..." id="phone-number" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="address">Delivery address:</label>
-                    <input type="text" class="form-control" placeholder="Enter the delivery address here..." id="address" required>
-                  </div>
-                  <button type="submit"  class="button2" id="confirm-order">CONFIRM ORDER</button>
-                </form>
+                <div id="address-info">
+                  <h1>DELIVERY ADDRESS</h1>
+                    <p><em>Please enter your delivery address below.</em></p>
+                    <form action="delivery-address" id="delivery-adresss">
+                      <div class="form-group">
+                        <label for="name">Full name:</label>
+                        <input type="text" class="form-control" placeholder="Enter your full name here..." id="name" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="phone-number">Phone number:</label>
+                        <input type="text" class="form-control" placeholder="Enter your phone number here..." id="phone-number" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="address">Delivery address:</label>
+                        <input type="text" class="form-control" placeholder="Enter the delivery address here..." id="address" required>
+                      </div>
+                      <button type="submit"  class="button2" id="confirm-button">CONFIRM ORDER</button>
+                    </form>
+                </div>
+                <div id="delivery-message">
+
+                </div>
               </div>
             </div>
           </div>

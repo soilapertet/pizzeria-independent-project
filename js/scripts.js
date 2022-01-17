@@ -4,6 +4,7 @@
 var sizeCost,crustCost,toppingsCost,currentCost,totalOrderCost,deliveryCost; 
 var pizzaCosts = [];
 var totalPizzaCost = 0;
+var deliveryCost = 100;
 var smallCost = 50;
 var mediumCost = 100;
 var largeCost = 150;
@@ -191,8 +192,7 @@ $(document).ready(function(){
   $("#delivery-button").click(function(){
 
     $("#proceed-button").show();
-    var deliveryCost =  100;
-
+    
     for(let i = 0;i < pizzaCosts.length; i++) {
       totalPizzaCost +=  pizzaCosts[i];
       console.log(totalPizzaCost);
@@ -208,11 +208,26 @@ $(document).ready(function(){
 // Proceed button
   $("#proceed-button").click(function(){
 
-    $(".col-md-8").show();
-    // event.preventDefault();
+    $("#address-info").toggle();
 
-    // var userName = $("input#name").val();
-    // var userNumber = $("input#phone-number").val();
-    // var userAddress = $("input#address").val();
-  })
+  });
+
+// Confirm button
+$("#confirm-button").click(function(){
+
+  $("#address-info").toggle();
+
+  event.preventDefault();
+
+    var userName = $("input#name").val();
+    var userNumber = $("input#phone-number").val();
+    var userAddress = $("input#address").val();
+    var totalOrderCost = deliveryCost + totalPizzaCost;
+
+    $("#delivery-message").text(
+      "THANK YOU " + userName + " FOR ORDERING WITH US! This is to confirm that we've received your order and that your delivery address is "+
+       userAddress + "." + " In case of any issue, we'll reach out to you through the provided number: "+ userNumber + ". " +
+       "Please pay Ksh. " + totalOrderCost + " upon delivery."
+    );
+  });
 });
