@@ -1,4 +1,53 @@
+/* 
+  https://coolors.co/32373b-4a5859-ec4e20-f4b860-af4319 
+  Onyx: #32373b;
+  Feldgrau: #4a5859;
+  Flame: #ec4e20;
+  Sunray: #f4b860;
+  Rust: #af4319;
+*/
+
 /* index.html */
+/*----Navigation bar-----*/
+header {
+  height:100px;
+  background: #4a5859;
+}
+header h2 {
+  display: inline-block;
+  margin: 0;
+  padding: 30px 0;
+  color:#f2eae3;
+}
+#logo
+{
+  margin: 0 10px 10px; /*top,right & left, bottom*/
+  cursor:pointer;
+  width: 80px;
+}
+nav {
+  float: right;
+  margin: 35px;
+}
+#navbar {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  float: right;
+}
+#navbar a {
+  text-decoration: none;
+  color:#f2eae3;
+  font-size: 20px;
+  font-weight: bold;
+  margin-right:20px;
+}
+#navbar a:hover {
+  color: #f4b860;
+  border-bottom: 2px solid #f4b860;
+  padding-bottom: 4px;
+}
 html#home
 {
   /* Ensure page covers entire viewpoint */
@@ -34,13 +83,6 @@ html#home
 { 
   margin-top: 20px;
   margin-left: 410px;
-}
-#logo
-{
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  cursor:pointer;
 }
 .button1
 {
@@ -105,7 +147,7 @@ html#home
   to {transform: translate3d(0,25px,0);} 
 }
 /* Credit to Erik Terwan*/
-nav 
+/* nav 
 {
   position: absolute;
 }
@@ -126,8 +168,8 @@ nav
 #menuToggle a:hover
 {
   color: tomato;
-}
-#menuToggle input
+} */
+/* #menuToggle input
 {
   display: block;
   width: 40px;
@@ -135,12 +177,12 @@ nav
   position: absolute;
   top: -7px;
   left: -5px;
-  cursor: pointer;
-  opacity: 0; /* hide this */
-  z-index: 2; /* and place it over the hamburger */
-}
+  cursor: pointer; */
+  /*opacity: 0;  hide this */
+  /*z-index: 2;  and place it over the hamburger
+}*/
 /* Just a quick hamburger */
-#menuToggle span
+/* #menuToggle span
 {
   display: block;
   width: 33px;
@@ -163,27 +205,27 @@ nav
 #menuToggle span:nth-last-child(2)
 {
   transform-origin: 0% 100%;
-}
+} */
 /* Transform all the slices of hamburger into a crossmark. */
-#menuToggle input:checked ~ span
+/* #menuToggle input:checked ~ span
 {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
   background: #232323;
-}
+} */
 /* But let's hide the middle one. */
-#menuToggle input:checked ~ span:nth-last-child(3)
+/* #menuToggle input:checked ~ span:nth-last-child(3)
 {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
-}
+} */
 /* Ohyeah and the last one should go the other direction */
-#menuToggle input:checked ~ span:nth-last-child(2)
+/* #menuToggle input:checked ~ span:nth-last-child(2)
 {
   transform: rotate(-45deg) translate(0, -1px);
-}
+} */
 /* Make this absolute positioned at the top left of the screen */
-#menu
+/* #menu
 {
   position: absolute;
   width: 300px;
@@ -192,9 +234,9 @@ nav
   padding-top: 125px;
   background: #ededed;
   list-style-type: none;
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased; */
   /* to stop flickering of text in safari */
-  transform-origin: 0% 0%;
+  /* transform-origin: 0% 0%;
   transform: translate(-100%, 0);
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
 } 
@@ -202,12 +244,12 @@ nav
 {
   padding: 10px 10px;
   font-size: 22px;
-}
+} */
 /* And let's slide it in from the left */
-#menuToggle input:checked ~ ul
+/* #menuToggle input:checked ~ ul
 {
   transform: none;
-}
+} */
  
 /* order.html */
 html#order

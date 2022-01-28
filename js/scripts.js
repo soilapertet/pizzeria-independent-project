@@ -123,7 +123,7 @@ $(document).ready(function(){
 // Checkout button
   $("#checkout-button").click(function(){
 
-    event.preventDefault();
+    // event.preventDefault();
 
     checkValidity();
     
