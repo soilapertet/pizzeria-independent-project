@@ -8,11 +8,39 @@
 */
 
 /* index.html */
+/*------------------------------------Global Styles------------------------------------*/
+html {
+  box-sizing: border-box;
+}
+
+*,*::before,*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.dark-background {
+  width: 100%; /*width fills whole container/viewport*/
+  height: 600px;
+  background-color: black;
+  position: relative; 
+}
+
+figure img {
+  height: 600px;
+  width: 100%;
+  opacity: 0.3;
+}
+
 /*------------------------------------Landing Section----------------------------------*/
 header {
   height:100px;
   background: #4a5859;
 }
+
 header h2 {
   display: inline-block;
   margin: 0;
@@ -48,21 +76,9 @@ nav {
   border-bottom: 2px solid #f4b860;
   padding-bottom: 4px;
 }
-.landing-section {
-  width: 100%;
-  height: 600px;
-  background-color: black;
-  overflow: hidden;
-  position: relative; 
-}
-figure img {
-  height: 600px;
-  width: 100%;
-  opacity: 0.3;
-}
-.landing-section h1 {
+#landing-section h1 {
   position: absolute;
-  top: 20vw;
+  top: 15vw;
   left: 20vw;
   color:#f2eae3;
   font-family: 'Mochiy Pop P One', sans-serif;
@@ -70,14 +86,15 @@ figure img {
   text-align: center;
 }
 /*---------------------------------------------------------------------------------------*/
+
 /*-------------------------------About Us------------------------------------------------*/
-.about {
+#about-section {
   background-color:#f08a4b;
   color: #f2eae3;
   font-size: 25px;
   overflow: auto;
 }
-.about img {
+#about-section img {
   float: left;
   margin: 20px;
 }
@@ -87,42 +104,25 @@ figure img {
 .about-content h1 {
   text-align:center;
 }
+/*-----------------------------------------------------------------------------------------*/
 
-/* html#home
-{
-  Ensure page covers entire viewpoint
-  min-height: 100%;
-  max-width: 100%;
-  background-image: url(../img/pizza.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+/*----------------------------------Order Section-----------------------------------------*/
+#order-section {
   position: relative;
-} */
-/* Need a relative container around your image and then you set your icon to be position: absolute. */
-/* #homepage
-{
+}
+
+#order-section h1 {
   position: absolute;
-  max-width: 100%;
-  max-height: 100%;
-  top: 250px;
-  left: 200px;
-  color :#F2EAE3;
+  top: 20vw;
+  left: 20vw;
+  color: #f2eae3;
+  font-size: 60px;
 }
-#homepage h1,#homepage h3
-{
-  font-size:50px;
-  text-align:center;
-}
-#homepage button
-{
-  margin-top:100px;
-  margin-left: 350px;
-}
-#homepage img
-{ 
-  margin-top: 20px;
-  margin-left: 410px;
+
+#order-button {
+  position: absolute;
+  bottom: 150px;
+  left: 42vw;
 }
 .button1
 {
@@ -177,6 +177,9 @@ figure img {
 }
 #mouse
 {
+  position: absolute;
+  bottom: 70px;
+  left: 46vw;
   animation : bounce 0.75s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
@@ -185,111 +188,7 @@ figure img {
 {
   from {transform: translate3d(0,0,0);}
   to {transform: translate3d(0,25px,0);} 
-} */
-/* Credit to Erik Terwan*/
-/* nav 
-{
-  position: absolute;
-}
-#menuToggle
-{
-  display: block;
-  position: relative;
-  top: 10px;
-  left: 50px;
-  z-index: 1;
-}
-#menuToggle a
-{
-  text-decoration: none;
-  color: #232323;
-  transition: color 0.3s ease;
-}
-#menuToggle a:hover
-{
-  color: tomato;
-} */
-/* #menuToggle input
-{
-  display: block;
-  width: 40px;
-  height: 32px;
-  position: absolute;
-  top: -7px;
-  left: -5px;
-  cursor: pointer; */
-  /*opacity: 0;  hide this */
-  /*z-index: 2;  and place it over the hamburger
-}*/
-/* Just a quick hamburger */
-/* #menuToggle span
-{
-  display: block;
-  width: 33px;
-  height: 4px;
-  margin-bottom: 5px;
-  top: 10px;
-  position: relative;
-  background: #cdcdcd;
-  border-radius: 3px;
-  z-index: 1;
-  transform-origin: 4px 0px;
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              opacity 0.55s ease;
-}
-#menuToggle span:first-child
-{
-  transform-origin: 0% 0%;
-}
-#menuToggle span:nth-last-child(2)
-{
-  transform-origin: 0% 100%;
-} */
-/* Transform all the slices of hamburger into a crossmark. */
-/* #menuToggle input:checked ~ span
-{
-  opacity: 1;
-  transform: rotate(45deg) translate(-2px, -1px);
-  background: #232323;
-} */
-/* But let's hide the middle one. */
-/* #menuToggle input:checked ~ span:nth-last-child(3)
-{
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
-} */
-/* Ohyeah and the last one should go the other direction */
-/* #menuToggle input:checked ~ span:nth-last-child(2)
-{
-  transform: rotate(-45deg) translate(0, -1px);
-} */
-/* Make this absolute positioned at the top left of the screen */
-/* #menu
-{
-  position: absolute;
-  width: 300px;
-  margin: -100px 0 0 -50px;
-  padding: 50px;
-  padding-top: 125px;
-  background: #ededed;
-  list-style-type: none;
-  -webkit-font-smoothing: antialiased; */
-  /* to stop flickering of text in safari */
-  /* transform-origin: 0% 0%;
-  transform: translate(-100%, 0);
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
 } 
-#menu li
-{
-  padding: 10px 10px;
-  font-size: 22px;
-} */
-/* And let's slide it in from the left */
-/* #menuToggle input:checked ~ ul
-{
-  transform: none;
-} */
  
 /* order.html */
 html#order
