@@ -1,14 +1,14 @@
 /* 
-  https://coolors.co/32373b-4a5859-ec4e20-f4b860-af4319 
+  https://coolors.co/32373b-4a5859-bc2c1a-d4dfc7-f08a4b
   Onyx: #32373b;
   Feldgrau: #4a5859;
-  Flame: #ec4e20;
-  Sunray: #f4b860;
-  Rust: #af4319;
+  International Orange Engineering: #ec4e20;
+  Beige: #d4dfc7;
+  Mango tango: #f08a4b;
 */
 
 /* index.html */
-/*----Navigation bar-----*/
+/*------------------------------------Landing Section----------------------------------*/
 header {
   height:100px;
   background: #4a5859;
@@ -69,9 +69,28 @@ figure img {
   font-size: 60px;
   text-align: center;
 }
-html#home
+/*---------------------------------------------------------------------------------------*/
+/*-------------------------------About Us------------------------------------------------*/
+.about {
+  background-color:#f08a4b;
+  color: #f2eae3;
+  font-size: 25px;
+  overflow: auto;
+}
+.about img {
+  float: left;
+  margin: 20px;
+}
+.about-content {
+  margin: 20px;
+}
+.about-content h1 {
+  text-align:center;
+}
+
+/* html#home
 {
-  /* Ensure page covers entire viewpoint */
+  Ensure page covers entire viewpoint
   min-height: 100%;
   max-width: 100%;
   background-image: url(../img/pizza.jpg);
@@ -79,9 +98,9 @@ html#home
   background-size: cover;
   background-position: center center;
   position: relative;
-}
+} */
 /* Need a relative container around your image and then you set your icon to be position: absolute. */
-#homepage
+/* #homepage
 {
   position: absolute;
   max-width: 100%;
@@ -166,7 +185,7 @@ html#home
 {
   from {transform: translate3d(0,0,0);}
   to {transform: translate3d(0,25px,0);} 
-}
+} */
 /* Credit to Erik Terwan*/
 /* nav 
 {
