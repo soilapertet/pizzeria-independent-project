@@ -72,9 +72,9 @@ nav {
   margin-right:20px;
 }
 #navbar a:hover {
-  color: #f4b860;
-  border-bottom: 2px solid #f4b860;
-  padding-bottom: 4px;
+  color: #f08a4b;
+  border-bottom: 2px solid #f08a4b;
+  padding-bottom: 10px;
 }
 #landing-section h1 {
   position: absolute;
@@ -90,17 +90,21 @@ nav {
 /*-------------------------------About Us------------------------------------------------*/
 #about-section {
   background-color:#f08a4b;
-  color: #f2eae3;
+  color: #4a5859;
   font-size: 25px;
   overflow: auto;
+  padding: 30px;
 }
+
 #about-section img {
   float: left;
   margin: 20px;
 }
+
 .about-content {
   margin: 20px;
 }
+
 .about-content h1 {
   text-align:center;
 }
@@ -189,7 +193,108 @@ nav {
   from {transform: translate3d(0,0,0);}
   to {transform: translate3d(0,25px,0);} 
 } 
- 
+
+/*--------------------------------Footer Section------------------------------------*/
+
+footer {
+  background-color: #4a5859;
+  color: #f08a4b;
+  padding: 50px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2,2fr);
+  column-gap: 20px;
+}
+
+#contact {
+  border-right: 3px solid #f08a4b;
+}
+
+#contact-info {
+  margin-top: 20px;
+}
+
+#contact-info ul {
+  list-style: none;
+  color:#f2eae3;
+  font-size: 20px;
+}
+
+#contact-info a {
+  color:#f2eae3;
+}
+
+#contact-info a:hover{
+  color:#f08a4b;
+  text-decoration: none;
+}
+
+#subscribe-button {
+  margin-top: 5px;
+}
+
+.button12 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+  border-radius: 6px;
+  border: none;
+  background: #f08a4b;
+  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.12);
+  color: #f2eae3;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button12:focus {
+  box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+  outline: 0;
+}
+
+#location h2 {
+  text-align: center;
+}
+
+iframe {
+  width: 500px;
+  height: 350px;
+}
+
+#social-media-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right:50px;
+  margin: 20px;
+}
+
+.fa {
+  padding: 15px;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+  background: #f08a4b;
+  color: #f2eae3;
+  width: 50px;
+}
+.fa:hover {
+  background: #f2eae3;
+  color: #f08a4b;
+}
+
+#copyright {
+  text-align: center;
+  padding-right: 40px;
+  margin-top:20px;
+}
+
 /* order.html */
 html#order
 {
