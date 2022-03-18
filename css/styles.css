@@ -6,6 +6,17 @@
   Beige: #d4dfc7;
   Mango tango: #f08a4b;
 */
+:root {
+  --onyx: #32373b;
+  --headerBackground: #4a5859;
+  --aboutFontColour: var(--headerBackground);
+  --aboutBackground: #f08a4b;
+  --footerFontColour: var(--aboutBackground);
+  --mainFontColour: #f2eae3;
+  --arrowFontColour: #fbf5f3;
+  --menuBackground: #80ab82;
+  --menuFontColour: #242124;
+}
 
 /* index.html */
 /*------------------------------------Global Styles------------------------------------*/
@@ -38,14 +49,14 @@ figure img {
 /*------------------------------------Landing Section----------------------------------*/
 header {
   height:100px;
-  background: #4a5859;
+  background: var(--headerBackground);
 }
 
 header h2 {
   display: inline-block;
   margin: 0;
   padding: 30px 0;
-  color:#f2eae3;
+  color:var(--mainFontColour);
 }
 #logo
 {
@@ -66,49 +77,117 @@ nav {
 }
 #navbar a {
   text-decoration: none;
-  color:#f2eae3;
+  color:var(--mainFontColour);
   font-size: 20px;
   font-weight: bold;
   margin-right:20px;
 }
 #navbar a:hover {
-  color: #f08a4b;
-  border-bottom: 2px solid #f08a4b;
+  color: var(--aboutBackground);
+  border-bottom: 2px solid var(--aboutBackground);
   padding-bottom: 10px;
 }
 #landing-section h1 {
   position: absolute;
   top: 15vw;
   left: 20vw;
-  color:#f2eae3;
+  color:var(--mainFontColour);
   font-family: 'Mochiy Pop P One', sans-serif;
   font-size: 60px;
   text-align: center;
 }
-/*---------------------------------------------------------------------------------------*/
 
 /*-------------------------------About Us------------------------------------------------*/
 #about-section {
-  background-color:#f08a4b;
-  color: #4a5859;
+  background-color: var(--aboutBackground);
+  color: var(--aboutFontColour);
   font-size: 25px;
   overflow: auto;
   padding: 30px;
 }
-
 #about-section img {
   float: left;
   margin: 20px;
 }
-
 .about-content {
   margin: 20px;
 }
-
 .about-content h1 {
   text-align:center;
 }
-/*-----------------------------------------------------------------------------------------*/
+/*--------------------------------- Menu --------------------------------------------------*/
+#pizza-menu {
+  max-height: 1000px;
+  background-color: var(--headerBackground);
+  position: relative;
+}
+.menu-heading {
+  font-size: 3.0rem;
+  font-family: 'Mochiy Pop P One', sans-serif;
+  text-align: center;
+  color: var(--mainFontColour);
+  padding: 20px;
+}
+.image-carousel{
+  max-width: 80vw;
+  max-height: 80%;
+  position: relative;
+  margin: auto;  /* centers the container */
+  padding-bottom: 50px;
+}
+.pizza-container {
+  display: none; 
+}
+.pizza-container img {
+  width: 100%;
+  height: 650px;
+}
+.back-btn, .forward-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  z-index: 20;
+  margin: 20px;
+  padding: 17px;
+  color: var(--arrowFontColour);
+  font-weight: bold;
+  font-size: 3.0rem;
+  transition: 0.4s ease;
+  user-select: none;
+}
+.back-btn:hover, .forward-btn:hover {
+  transform: scale(1.2);
+}
+.forward-btn {
+  right: 0; /* Move forward button to the right */
+} 
+.pizza-name {
+  position: absolute;
+  left: 40%;
+  bottom: 80px;
+  font-size: 3.5rem;
+  font-family: 'Patrick Hand', cursive;
+  font-weight: bold;
+  color: var(--arrowFontColour);
+  letter-spacing: 4px;
+  border-bottom: 5px solid var(--arrowFontColour);
+}
+/* Faint animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.4s;
+  animation-name: fade;
+  animation-duration: 1.4s;
+}
+@-webkit-keyframes fade {
+  from {opacity: .5}
+  to {opacity: 2}
+}
+@keyframes fade {
+  from {opacity: .5}
+  to {opacity: 2}
+}
 
 /*----------------------------------Order Section-----------------------------------------*/
 #order-section {
@@ -119,7 +198,7 @@ nav {
   position: absolute;
   top: 20vw;
   left: 20vw;
-  color: #f2eae3;
+  color: var(--mainFontColour);
   font-size: 60px;
 }
 
@@ -197,8 +276,8 @@ nav {
 /*--------------------------------Footer Section------------------------------------*/
 
 footer {
-  background-color: #4a5859;
-  color: #f08a4b;
+  background-color: var(--headerBackground);
+  color: var(--footerFontColour);
   padding: 50px;
 }
 
@@ -209,7 +288,7 @@ footer {
 }
 
 #contact {
-  border-right: 3px solid #f08a4b;
+  border-right: 3px solid var(--footerFontColour);
 }
 
 #contact-info {
@@ -218,16 +297,16 @@ footer {
 
 #contact-info ul {
   list-style: none;
-  color:#f2eae3;
+  color: var(--mainFontColour);
   font-size: 20px;
 }
 
 #contact-info a {
-  color:#f2eae3;
+  color: var(--mainFontColour);
 }
 
 #contact-info a:hover{
-  color:#f08a4b;
+  color: var(--aboutBackground);
   text-decoration: none;
 }
 
@@ -243,9 +322,9 @@ footer {
   font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
   border-radius: 6px;
   border: none;
-  background: #f08a4b;
+  background: var(--aboutBackground);
   box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.12);
-  color: #f2eae3;
+  color: var(--mainFontColour);
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
@@ -280,13 +359,13 @@ iframe {
   text-decoration: none;
   margin: 5px 2px;
   border-radius: 50%;
-  background: #f08a4b;
-  color: #f2eae3;
+  background: var(--aboutBackground);
+  color: var(--mainFontColour);
   width: 50px;
 }
 .fa:hover {
-  background: #f2eae3;
-  color: #f08a4b;
+  color: var(--mainFontColour);
+  color: var(--footerFontColour);
 }
 
 #copyright {
@@ -334,14 +413,14 @@ html#order
 .card
 {
   background-color: #232323;
-  color :#F2EAE3;
+  color: var(--mainFontColour);
   font-size:20px;
   opacity:0.75;
   margin-bottom:70px;
 }
 .table 
 {
-  color :#F2EAE3;
+  color: var(--mainFontColour);
 }
 .button2 
 {
