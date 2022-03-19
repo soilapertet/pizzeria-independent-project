@@ -51,35 +51,45 @@
     <div class="menu-heading">Our Selection</div>
     <section class="image-carousel">
       <!-- Containers with pizza types -->
-      <div class="pizza-container">
+      <div class="pizza-container active fade">
         <img src="img/hawaiian_pizza.jpg" alt="Hawaiian Pizza">
         <div class="pizza-name">Hawaiian</div>
       </div>
-      <div class="pizza-container">
+      <div class="pizza-container fade">
         <img src="img/BBQchickenpizza.jpg" alt="Bbq Pizza">
         <div class="pizza-name">BBQ Chicken</div>
       </div>
-      <div class="pizza-container">
+      <div class="pizza-container fade">
         <img src="img/margherita_pizza.jpg" alt="Margherita pizza">
         <div class="pizza-name">Margherita</div>
       </div>
-      <div class="pizza-container">
+      <div class="pizza-container fade">
         <img src="img/pepperoni.jpeg" alt="Pepperoni pizza">
         <div class="pizza-name">Pepperoni</div>
       </div>
-      <div class="pizza-container">
+      <div class="pizza-container fade">
         <img src="img/meat_lovers.jpg" alt="Meat Lover's pizza">
         <div class="pizza-name">Meat Lover's</div>
       </div>
-      <div class="pizza-container">
+      <div class="pizza-container fade">
         <img src="img/veggie_lovers.jpg" alt="Veggie pizza">
-        <div class="pizza-name">Veggie</div>
+        <div class="pizza-name">Classic Veggie</div>
       </div>
     </section>
     <!-- Back and Forward buttons -->
     <i class="fa-solid fa-circle-left back-btn"></i>    
     <i class="fa-solid fa-circle-right forward-btn"></i>  
   </section>
+
+  <!-- The dots/circles -->
+  <div class="navigation-dots">
+    <span class="dot active" onclick="currentPizzaSlide(1)"></span>
+    <span class="dot" onclick="currentPizzaSlide(2)"></span>
+    <span class="dot" onclick="currentPizzaSlide(3)"></span>
+    <span class="dot" onclick="currentPizzaSlide(4)"></span>
+    <span class="dot" onclick="currentPizzaSlide(5)"></span>
+    <span class="dot" onclick="currentPizzaSlide(6)"></span>
+  </div>
   <section class="dark-background" id="order-section">
     <figure>
       <img src="img/pizza.jpg" alt="Image of a pizza">

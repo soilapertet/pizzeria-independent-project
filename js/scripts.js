@@ -9,6 +9,13 @@ var smallCost = 50;
 var mediumCost = 100;
 var largeCost = 150;
 var ultraCost = 200;
+let currentPizzaSlide = 0;
+
+// Collect all the pizza containers
+let pizzaSlides = Array.from(document.querySelectorAll(".pizza-container"));
+
+// Collect all the navigation dots
+let navigationDots = Array.from(document.querySelectorAll(".dot"));
 
 // Create Pizza constructor
 function Pizza(type,size,crust,toppings)
@@ -105,6 +112,28 @@ function returnPizzaCosts(){
 }
 
 returnPizzaCosts();
+
+const changePizzaSlide = (moveTo) => {
+
+  switch(true) {
+
+    // Checks if moveTo is greater or equal to the array length, i.e., 6
+    case moveTo >= pizzaSlides.length:
+      moveTo = 0; // return to the first pizza slide; resets the function.
+      break;
+    // Checks if moveTo is a negative number
+    case moveTo < 0 :
+      moveTo = pizzaSlides.length - 1; // return to the last pizza slide
+      break;
+  }
+
+  pizzaSlides[currentPizzaSlide].classList.toggle("active"); /** Hides the current pizza slide */
+  navigationDots[currentPizzaSlide].classList.toggle("active");
+  pizzaSlides[moveTo].classList.toggle("active"); /** Displays the next pizza slide */
+  navigationDots[moveTo].classList.toggle("active");
+
+  currentPizzaSlide = moveTo; /** Updates the value for the variable "currentPizzaSlide"*/
+}
 
 // User-interface logic
 
@@ -265,6 +294,16 @@ $(document).ready(function(){
            "Please pay Ksh. " + totalOrderCost + " at the cashier upon arrving at the premises."
         );
     });
+  });
 
+  let forwardBtn = document.querySelector(".forward-btn");
+  let backBtn = document.querySelector(".back-btn");
+
+  forwardBtn.addEventListener("click", () => {
+    changePizzaSlide(currentPizzaSlide + 1);
+  });
+
+  backBtn.addEventListener("click", () => {
+    changePizzaSlide(currentPizzaSlide - 1);
   });
 });
