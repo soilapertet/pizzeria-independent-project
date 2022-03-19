@@ -113,6 +113,17 @@ function returnPizzaCosts(){
 
 returnPizzaCosts();
 
+const resetMenuSection = () => {
+
+  pizzaSlides.forEach((pizzaSlide) => {
+    pizzaSlide.classList.remove("active");
+  });
+
+  navigationDots.forEach((navDot) => {
+    navDot.classList.remove("active");
+  });
+}
+
 const changePizzaSlide = (moveTo) => {
 
   switch(true) {
@@ -318,4 +329,18 @@ $(document).ready(function(){
       }
     });
   });
+
+  setInterval(() => {
+    
+    resetMenuSection(); // remove the class "active" from both the pizza slides and the navigation dots;
+    
+    if(currentPizzaSlide === pizzaSlides.length) {
+      currentPizzaSlide = 0; // Resets the function; loops through the pizza slides
+    }
+
+    pizzaSlides[currentPizzaSlide].classList.add("active");
+    navigationDots[currentPizzaSlide].classList.add("active");
+    ++ currentPizzaSlide;
+
+  }, 2000);
 });
