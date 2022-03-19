@@ -135,6 +135,8 @@ const changePizzaSlide = (moveTo) => {
   currentPizzaSlide = moveTo; /** Updates the value for the variable "currentPizzaSlide"*/
 }
 
+
+
 // User-interface logic
 
 $(document).ready(function(){
@@ -305,5 +307,15 @@ $(document).ready(function(){
 
   backBtn.addEventListener("click", () => {
     changePizzaSlide(currentPizzaSlide - 1);
+  });
+
+  navigationDots.forEach((navDot) => {
+
+    let navDotIndex = navigationDots.indexOf(navDot);
+    navDot.addEventListener("click", () => {
+      if(currentPizzaSlide !== navDotIndex) {
+        changePizzaSlide(navDotIndex);
+      }
+    });
   });
 });
