@@ -1,21 +1,21 @@
-# Knead To Know Pizzeria
+# Papa Joey's Pizzeria
 #### By **Soila Pertet**
 ## Description
 This is a web application aimed at increasing the customer base for a pizza place by the name, 'Knead To Know Pizzeria'. It allows the customers
 to select their preferred type and size of pizza, as well as choice the toppings for their pizzas. The application also allows the users to choice
 between home delivery and pick-up options.
 <br/>
-Date of current version: 17/01/2022;
+Date of current version: 22/03/2022;
 
 ### Screenshot
-<img src="https://zippyimage.com/images/2022/01/16/0975d75191c582908d96325af01b99bf.png" alt="Screenshot of the landing page for Knead To Know Pizzeria">
+<img src="https://zippyimage.com/images/2022/03/22/c6ad9ab38e409d449e76d8c659d48135.png" alt="Screenshot of the landing page for Knead To Know Pizzeria">
 
 ## Live demo
-https://soilapertet.github.io/knead-to-know-pizzeria/
+https://soilapertet.github.io/pizzeria-independent-project/
 
 ## Setup/Installation Requirements
 * Navigate to the terminal on your PC
-* Type in the command: git clone https://github.com/soilapertet/knead-to-know-pizzeria.git
+* Type in the command: git clone https://github.com/soilapertet/pizzeria-independent-project.git
 * Navigate into the directory within the local repository
 * Open the local repository on your preferred text editor
 
