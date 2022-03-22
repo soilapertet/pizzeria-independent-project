@@ -57,6 +57,7 @@ header h2 {
   margin: 0;
   padding: 30px 0;
   color:var(--mainFontColour);
+  font-family: 'Mochiy Pop P One', sans-serif;
 }
 #logo
 {
@@ -400,12 +401,37 @@ iframe {
 html#order
 {
   min-height:100%;
-  background-image: url(../img/pizza-order.jpg);
+  background-image: url(../img/pan-pizza-wallpaper.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
   position:relative;
+}
+.order-header {
+  position: relative;
+  top: 0; left: 0;
+  height: 100px;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: var(--headerBackground);
+  color: var(--mainFontColour);
+}
+.order-header a {
+  color: var(--mainFontColour);
+  text-decoration: none;
+}
+.home {
+  position: absolute;
+  right: 50px;
+  font-size: 1.6rem;
+  font-family: 'Mochiy Pop P One', sans-serif;
+  cursor: pointer;
+}
+#order-section.hide{
+  display: none;
 }
 #order-page
 {
@@ -413,6 +439,8 @@ html#order
   top: 70px;
   left:50px;
   right: 50px;
+  margin: 50px auto;
+  z-index: 100;
 }
 #order-now h2 
 {
@@ -431,18 +459,33 @@ html#order
 #order-summary
 {
   display:none;
+  position: relative;
+  margin: 0 auto ;
+  z-index: 500;
+}
+#order-summary .card {
+  border: none;
+  border-radius: 25px;
+  opacity: 1;
+}
+#order-summary .card-body {
+  background-color: var(--mainFontColour);
+  color: var(--headerBackground);
+  border-radius: 25px;
+}
+#order-summary.show{
+  display: block;
 }
 .card
 {
-  background-color: #232323;
+  background-color: rgb(50,55,59, 0.75);
   color: var(--mainFontColour);
   font-size:20px;
-  opacity:0.75;
   margin-bottom:70px;
 }
 .table 
 {
-  color: var(--mainFontColour);
+  color: var(--headerBackground);
 }
 .button2 
 {
@@ -451,7 +494,7 @@ html#order
   float:right;
   align-items: center;
   appearance: none;
-  background-color: #fff;
+  background-color: var(--menuBackground);
   border-radius: 28px;
   border-style: none;
   box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
@@ -516,13 +559,55 @@ html#order
 {
   box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
 }
-#delivery,#proceed-button
-{
-  display:none;
+#checkout-button {
+  background-color: var(--mainFontColour);
+  font-weight: bold;
 }
- #delivery h1, #delivery p
+#proceed-button {
+  display:none;
+  position: relative;
+  right: 15%;
+  margin: 0 auto;
+}
+.options-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 20px auto;
+}
+.pizza-costs {
+  position: relative;
+  left: 20%;
+}
+.pizza-costs > p {
+  text-align: justify;
+}
+#delivery .card {
+  display:none;
+  border-radius: 10px;
+}
+#delivery .card-body {
+  background-color: var(--mainFontColour);
+  color: var(--menuFontColour);
+  border-radius: 10px;
+}
+#delivery .card.show {
+  display: block;
+  z-index: 200;
+
+}
+ #delivery h1
 {
   text-align: center;
+}
+#delivery-message {
+  position: relative;
+  top: 15%;
+}
+.col-md-8 {
+  margin: 0 auto;
+  width: 60%;
 }
 #address-info
 {
@@ -539,4 +624,16 @@ html#order
   {
     font: size 10vw;
   }
+}
+.overlay {
+  display: none;
+  background-color: var(--menuFontColour);
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  opacity: 0.5;
+  z-index: 100;
+}
+.overlay.show{
+  display: block;
 }

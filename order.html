@@ -4,25 +4,25 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
   <title>ORDER NOW</title>
 </head>
 <body>
-  <nav role="navigation">
-    <div id="menuToggle">
-      <input type="checkbox">
-      <span></span>
-      <span></span>
-      <span></span>
-      <ul id="menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="sign-up.html">Sign Up</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-      </ul>
+  <header class="order-header">
+    <img src="img/pizzalogo.png" alt="Image of pizza logo" id="logo">
+    <h2>Papa Joey's Pizzeria</h2>
+    <div class="home">
+      <a href="index.html">
+        <i class="fa-solid fa-house-chimney"></i>
+        <span>Home</span>
+      </a>
     </div>
-  </nav>
+  </header>
   <div id="order-page">
     <div id="order-section">
       <div class="container">
@@ -146,14 +146,17 @@
             <div class="row">
               <h1>DELIVERY OR PICK-UP</h1>
               <div class="col-md-4">
-                <button type="button" class="button2" id="pick-up-button">PICK-UP</button>
-                <button type="button" class="button2" id="delivery-button">DELIVERY</button> 
-                <br>
-                <br>
-                <br>
-                <p id="delivery-cost"></p>
-                <p id="cumultative-cost"></p>
-                <p id="total-cost"></p>
+                <div class="options-buttons">
+                  <button type="button" class="button2" id="pick-up-button">PICK-UP</button>
+                  <i class="fa-solid fa-moped">
+                    <button type="button" class="button2" id="delivery-button">DELIVERY</button> 
+                  </i>
+                </div>
+                <div class="pizza-costs">
+                  <p id="delivery-cost"></p>
+                  <p id="cumultative-cost"></p>
+                  <p id="total-cost"></p>
+                </div>
                 <button type="button" class="button2" id="proceed-button">PROCEED</button>
               </div>
               <div class="col-md-8">
@@ -167,9 +170,9 @@
                       </div>
                       <div class="form-group">
                         <label for="phone-number">Phone number:</label>
-                        <input type="text" class="form-control" placeholder="Enter your phone number here..." id="phone-number" required>
+                        <input type="number" class="form-control" placeholder="Enter your phone number here..." id="phone-number" required>
                       </div>
-                      <div class="form-group">
+                      <div class="form-group delivery-address">
                         <label for="address">Delivery address:</label>
                         <input type="text" class="form-control" placeholder="Enter the delivery address here..." id="address" required>
                       </div>
@@ -185,6 +188,7 @@
         </div>
       </div>
     </div>
+    <div class="overlay"></div>
   </div>
   <script src="js/jquery.min.js"></script>
   <script src="js/scripts.js"></script>

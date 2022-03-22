@@ -9,13 +9,6 @@ var smallCost = 50;
 var mediumCost = 100;
 var largeCost = 150;
 var ultraCost = 200;
-let currentPizzaSlide = 0;
-
-// Collect all the pizza containers
-let pizzaSlides = Array.from(document.querySelectorAll(".pizza-container"));
-
-// Collect all the navigation dots
-let navigationDots = Array.from(document.querySelectorAll(".dot"));
 
 // Create Pizza constructor
 function Pizza(type,size,crust,toppings)
@@ -113,41 +106,6 @@ function returnPizzaCosts(){
 
 returnPizzaCosts();
 
-const resetMenuSection = () => {
-
-  pizzaSlides.forEach((pizzaSlide) => {
-    pizzaSlide.classList.remove("active");
-  });
-
-  navigationDots.forEach((navDot) => {
-    navDot.classList.remove("active");
-  });
-}
-
-const changePizzaSlide = (moveTo) => {
-
-  switch(true) {
-
-    // Checks if moveTo is greater or equal to the array length, i.e., 6
-    case moveTo >= pizzaSlides.length:
-      moveTo = 0; // return to the first pizza slide; resets the function.
-      break;
-    // Checks if moveTo is a negative number
-    case moveTo < 0 :
-      moveTo = pizzaSlides.length - 1; // return to the last pizza slide
-      break;
-  }
-
-  pizzaSlides[currentPizzaSlide].classList.toggle("active"); /** Hides the current pizza slide */
-  navigationDots[currentPizzaSlide].classList.toggle("active");
-  pizzaSlides[moveTo].classList.toggle("active"); /** Displays the next pizza slide */
-  navigationDots[moveTo].classList.toggle("active");
-
-  currentPizzaSlide = moveTo; /** Updates the value for the variable "currentPizzaSlide"*/
-}
-
-
-
 // User-interface logic
 
 $(document).ready(function(){
@@ -169,7 +127,10 @@ $(document).ready(function(){
 
     checkValidity();
     
-    $("#order-summary").slideToggle();
+    document.querySelector("#order-section").classList.toggle("hide");
+    document.querySelector("#order-summary").classList.toggle("show");
+    document.querySelector(".overlay").classList.toggle("show");
+
     
   // Retrieve input from form
     var pizzaType = $("#pizza-type option:selected").val();
@@ -200,7 +161,9 @@ $(document).ready(function(){
 // Add pizza button
   $("#add-pizza-button").click(function(){
 
-    $("#order-summary").slideToggle();
+    document.querySelector("#order-section").classList.toggle("hide");
+    document.querySelector("#order-summary").classList.toggle("show");
+    document.querySelector(".overlay").classList.toggle("show");
 
     // Reset form entry fields
     $("select option").prop("selected",false);
@@ -218,9 +181,8 @@ $(document).ready(function(){
 // Done button
   $("#done-button").click(function(){
 
-    $("#order-summary").slideToggle(800);
-    $("#order-section").slideUp(800);
-    $("#delivery").slideDown();
+    document.querySelector("#order-summary").classList.toggle("show");
+    document.querySelector("#delivery .card").classList.toggle("show");
 
     var deliveryPosition = $("#delivery").offset().top;
     $("HTML,BODY").animate({scrollTop:deliveryPosition},400,function(){
@@ -277,6 +239,8 @@ $(document).ready(function(){
   $("#pick-up-button").click(function(){
 
     $("#proceed-button").show();
+    document.querySelector(".delivery-address input").setAttribute("disabled", "true");
+
 
     for(let i = 0;i < pizzaCosts.length; i++) {
       totalPizzaCost +=  pizzaCosts[i];
@@ -303,44 +267,9 @@ $(document).ready(function(){
     
         $("#delivery-message").text(
           "THANK YOU " + userName + " FOR ORDERING WITH US! This is to confirm that we've received your order and that your order is processed"+
-          "." + "Your order will be ready in the next 35-45 minutes. Your patience is highly appreciated. Once your order is ready, we'll send our address to the provided number: "+ userNumber + ". " +
-           "Please pay Ksh. " + totalOrderCost + " at the cashier upon arrving at the premises."
+          "." + "Your order will be ready in the next 35-45 minutes. Kindly make your way to the provided location as shown on our website." +
+           " Please pay Ksh. " + totalOrderCost + " at the cashier upon arrving at the premises."
         );
     });
   });
-
-  let forwardBtn = document.querySelector(".forward-btn");
-  let backBtn = document.querySelector(".back-btn");
-
-  forwardBtn.addEventListener("click", () => {
-    changePizzaSlide(currentPizzaSlide + 1);
-  });
-
-  backBtn.addEventListener("click", () => {
-    changePizzaSlide(currentPizzaSlide - 1);
-  });
-
-  navigationDots.forEach((navDot) => {
-
-    let navDotIndex = navigationDots.indexOf(navDot);
-    navDot.addEventListener("click", () => {
-      if(currentPizzaSlide !== navDotIndex) {
-        changePizzaSlide(navDotIndex);
-      }
-    });
-  });
-
-  setInterval(() => {
-    
-    resetMenuSection(); // remove the class "active" from both the pizza slides and the navigation dots;
-    
-    if(currentPizzaSlide === pizzaSlides.length) {
-      currentPizzaSlide = 0; // Resets the function; loops through the pizza slides
-    }
-
-    pizzaSlides[currentPizzaSlide].classList.add("active");
-    navigationDots[currentPizzaSlide].classList.add("active");
-    ++ currentPizzaSlide;
-
-  }, 2000);
 });

@@ -41,7 +41,7 @@ const resetMenuSection = () => {
 
 
 let forwardBtn = document.querySelector(".forward-btn");
-  let backBtn = document.querySelector(".back-btn");
+let backBtn = document.querySelector(".back-btn");
 
   forwardBtn.addEventListener("click", () => {
     changePizzaSlide(currentPizzaSlide + 1);
@@ -61,16 +61,16 @@ let forwardBtn = document.querySelector(".forward-btn");
     });
   });
 
-  setInterval(() => {
-    
-    resetMenuSection(); // remove the class "active" from both the pizza slides and the navigation dots;
-    
-    if(currentPizzaSlide === pizzaSlides.length) {
-      currentPizzaSlide = 0; // Resets the function; loops through the pizza slides
-    }
+setInterval(() => {
+  
+  resetMenuSection(); // remove the class "active" from both the pizza slides and the navigation dots;
+  
+  if(currentPizzaSlide === pizzaSlides.length) {
+    currentPizzaSlide = 0; // Resets the function; loops through the pizza slides
+  }
 
-    pizzaSlides[currentPizzaSlide].classList.add("active");
-    navigationDots[currentPizzaSlide].classList.add("active");
-    ++ currentPizzaSlide;
+  pizzaSlides[currentPizzaSlide].classList.add("active");
+  navigationDots[currentPizzaSlide].classList.add("active");
+  ++ currentPizzaSlide;
 
-  }, 2000);
+}, 2000);
